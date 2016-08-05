@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        listView = (ListView) findViewById(R.id.listView);
 
         //Setup Array for integer
         int[] iconInts = new int[20];
@@ -54,9 +53,32 @@ public class MainActivity extends AppCompatActivity {
             detailShort[i] = detailLongStrings[i].substring(0,20) + "...";
         }
 
-        //Create ListView
-        MyAdapter myAdapter = new MyAdapter(this, iconInts, titleStrings, detailLongStrings);
-        listView.setAdapter(myAdapter);
+        ////Create ListView
+        //listView = (ListView) findViewById(R.id.listView);
+        //MyAdapter myAdapter = new MyAdapter(MainActivity.this, iconInts, titleStrings, detailLongStrings);
+        //listView.setAdapter(myAdapter);
+
+        MyData objMyData = new MyData();
+        int[] intIcon = objMyData.icon();
+        String[] strTitle = objMyData.title();
+
+        //MyAdapter objMyAdapter = new MyAdapter(MainActivity.this, intIcon, strTitle, strTitle);
+        MyAdapter objMyAdapter = new MyAdapter(MainActivity.this, intIcon, titleStrings, detailLongStrings);
+        ListView myListView = (ListView) findViewById(R.id.listView);
+        myListView.setAdapter(objMyAdapter);
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                myIntentToDetail(i);
+            }
+
+            private void myIntentToDetail(int intClick) {
+                Intent objIntent = new Intent(MainActivity.this, ShowDetailActivity.class);
+                objIntent.putExtra("click", intClick);
+                startActivity(objIntent);
+            }
+        });
 
     }   //Main method
 
@@ -71,4 +93,6 @@ public class MainActivity extends AppCompatActivity {
         intent.setData(Uri.parse(urlYoutubeString));
         startActivity(intent);
     }
+
+
 }   //Main class

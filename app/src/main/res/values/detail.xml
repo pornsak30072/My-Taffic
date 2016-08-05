@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="traffic_detail">
+        <item>รายละเอียด 1</item>
+        <item>รายละเอียด 2</item>
+        <item>รายละเอียด 3</item>
+        <item>รายละเอียด 4</item>
+        <item>รายละเอียด 5</item>
+        <item>รายละเอียด 6</item>
+        <item>รายละเอียด 7</item>
+        <item>รายละเอียด 8</item>
+        <item>รายละเอียด 9</item>
+        <item>รายละเอียด 10</item>
+        <item>รายละเอียด 11</item>
+        <item>รายละเอียด 12</item>
+        <item>รายละเอียด 13</item>
+        <item>รายละเอียด 14</item>
+        <item>รายละเอียด 15</item>
+        <item>รายละเอียด 16</item>
+        <item>รายละเอียด 17</item>
+        <item>รายละเอียด 18</item>
+        <item>รายละเอียด 19</item>
+        <item>รายละเอียด 20</item>
+    </string-array>
+</resources>
