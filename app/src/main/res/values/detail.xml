@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="traffic_detail">
+
         <item>รายละเอียด 1</item>
         <item>รายละเอียด 2</item>
         <item>รายละเอียด 3</item>
@@ -21,5 +22,6 @@
         <item>รายละเอียด 18</item>
         <item>รายละเอียด 19</item>
         <item>รายละเอียด 20</item>
+
     </string-array>
 </resources>
